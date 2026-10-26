@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🦺 SafeWalk 보행환경 객체 탐지
+# SafeWalk-Object-Detection-Project
+
+## 🦺 SafeWalk 보행환경 객체 탐지
 
 ### 8클래스 객체 탐지 · 데이터 통합 · YOLO 학습
 
@@ -60,8 +62,6 @@ flowchart LR
 - [최상위 학습 노트북](safewalk_train_v8_fixed%20%281%29.ipynb).
 - [보존된 실험 폴더](pbl2-main/).
 - [버전 기록](docs/VERSIONS.md).
-
-<a name="implementation"></a>
 
 ## 🧩 주요 기술
 
