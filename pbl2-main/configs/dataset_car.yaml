@@ -1,0 +1,14 @@
+names:
+- bicycle
+- kickboard
+- bollard
+- car
+- motorcycle
+- stairs
+- crosswalk
+- people
+nc: 8
+path: /root/pbl2-main/data/per_class/car
+test: images/test
+train: images/train
+val: images/val
