@@ -6,22 +6,17 @@
 
 **기술 분류:** 컴퓨터 비전 › 딥러닝 객체 검출 › 다중 데이터셋·8클래스 통합
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![YOLO](https://img.shields.io/badge/Detection-YOLOv8-7C3AED?style=flat-square)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
+`Python`
+`YOLO`
+`Jupyter`
 
 [빠른 시작](#quick-start) · [저장소 구성](#repository-structure) · [클래스 구성](#data-settings)
 
-[예시 이미지](#preview)
+[핵심 구성](#input-processing-output)
 
 </div>
 
 <a name="overview"></a>
-
-## 🗺️ 한눈에 보는 구성
-
-<p align="center"><img src="assets/overview.png" width="960" alt="프로젝트의 입력·처리·출력을 정리한 설명도" /></p>
-보관한 프로젝트 자료의 흐름을 정리한 설명도입니다.
 
 ## ✨ 최신 차수에서 달라진 점
 
@@ -34,18 +29,7 @@
 
 **자료별 안내:** [기본](docs/versions/stage-1.md) · [전체 기록](docs/VERSIONS.md)
 
-
 <a name="preview"></a>
-
-## 🖼️ 예시로 보기
-
-<p align="center"><img src="assets/previews/code-explainer-v2.png" width="900" alt="코드 기반 설명도 · SafeWalk-Object-Detection-Project" /></p>
-
-**코드 기반 설명도** — 코드에 정의된 8개 탐지 클래스 목록입니다. 클래스 사이의 순차 관계나 성능 측정값을 뜻하지 않습니다.
-
-[근거 파일 보기](safewalk_train_v8_fixed%20%281%29.ipynb)
-
-
 
 <a name="input-processing-output"></a>
 
@@ -53,10 +37,9 @@
 
 | 단계 | 이 프로젝트에서 다루는 내용 |
 | :--- | :--- |
-| 입력 | Roboflow·COCO 등 객체 영상과 라벨 |
-| 처리 | 클래스 ID 통합, YOLOv8x 클래스별 학습과 전체 미세조정 |
-| 출력 | 8클래스 탐지·평가·영상 데모 |
-
+| 📥 입력 | Roboflow·COCO 등 객체 영상과 라벨 |
+| ⚙️ 처리 | 클래스 ID 통합, YOLOv8x 클래스별 학습과 전체 미세조정 |
+| 📤 출력 | 8클래스 탐지·평가·영상 데모 |
 
 
 ---
