@@ -1,17 +1,10 @@
 <div align="center">
 
-# 🚶 SafeWalk 보행환경 객체 탐지
+# 🚶 SafeWalk Project
 
-**SafeWalk-Object-Detection-Project**
+여러 데이터셋을 통합해 보행환경의 8개 클래스를 탐지합니다.
 
 **기술 분류:** 컴퓨터 비전 › 딥러닝 객체 검출 › 다중 데이터셋·8클래스 통합
-
-
-
-### ✨ 8클래스 객체 탐지 · 데이터 통합 · YOLO 학습
-
-보행 중 마주치는 사람·차량·시설물을 영상에서 찾는 연구입니다.<br>
-여러 데이터셋의 클래스 이름을 통합하고, 클래스별 학습과 통합 학습을 구성합니다.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![YOLO](https://img.shields.io/badge/Detection-YOLOv8-7C3AED?style=flat-square)
@@ -22,6 +15,25 @@
 [예시 이미지](#preview)
 
 </div>
+
+<a name="overview"></a>
+
+## 🗺️ 한눈에 보는 구성
+
+<p align="center"><img src="assets/overview.png" width="960" alt="프로젝트의 입력·처리·출력을 정리한 설명도" /></p>
+보관한 프로젝트 자료의 흐름을 정리한 설명도입니다.
+
+## ✨ 최신 차수에서 달라진 점
+
+보행 안전 관련 8개 객체의 학습·평가 노트북과 실행 자료를 보관합니다.
+
+테스트 결과로 시작 모델을 선택한 경로가 있어 같은 테스트 수치를 독립 시험 성능으로 해석하지 않습니다. 숫자 차수는 확인되지 않습니다.
+
+- YOLO 학습·평가 경로를 담은 노트북입니다. 클래스 객체 검출과 실제 보행 위험 판정 성능을 구분합니다.
+- 학습 데이터와 평가 설정을 노트북 셀에서 확인해야 하며, 테스트 결과를 이용한 시작 모델 선택 때문에 같은 시험 수치를 완전히 독립된 평가로 볼 수 없습니다.
+
+**자료별 안내:** [기본](docs/versions/stage-1.md) · [전체 기록](docs/VERSIONS.md)
+
 
 <a name="preview"></a>
 
