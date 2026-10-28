@@ -1,6 +1,6 @@
 <div align="center">
 
-# SafeWalk 보행환경 객체 탐지
+# 🚶 SafeWalk 보행환경 객체 탐지
 
 **SafeWalk-Object-Detection-Project**
 
@@ -8,7 +8,7 @@
 
 
 
-### 8클래스 객체 탐지 · 데이터 통합 · YOLO 학습
+### ✨ 8클래스 객체 탐지 · 데이터 통합 · YOLO 학습
 
 보행 중 마주치는 사람·차량·시설물을 영상에서 찾는 연구입니다.<br>
 여러 데이터셋의 클래스 이름을 통합하고, 클래스별 학습과 통합 학습을 구성합니다.
@@ -53,6 +53,8 @@
 
 ## ✨ 프로젝트 소개
 
+보행환경의 여러 객체를 하나의 분류 체계로 묶어 탐지 모델을 학습하는 프로젝트입니다.
+
 SafeWalk는 보행환경을 구성하는 여덟 종류의 객체를 YOLO로 탐지하기 위한 학습 노트북입니다. Roboflow와 COCO 등 서로 다른 데이터의 클래스 표기를 공통 ID로 바꿔 통합하는 부분을 포함합니다.
 
 | 기능 | 구현 내용 |
@@ -95,7 +97,7 @@ flowchart LR
 
 ## 🧩 주요 기술
 
-Ultralytics YOLO, PyTorch, OpenCV, Roboflow, pandas, Matplotlib, PyYAML을 사용합니다. 노트북의 기본 모델은 YOLOv8x이며, GPU 메모리에 따라 배치 크기를 정하는 분기가 있습니다.
+데이터를 준비하고 모델을 학습하는 데 Ultralytics YOLO, PyTorch, OpenCV, Roboflow, pandas, Matplotlib, PyYAML을 사용합니다. 노트북의 기본 모델은 YOLOv8x이며, GPU 메모리에 따라 배치 크기를 정하는 분기가 있습니다.
 
 데이터셋별 `class_map`에서 비슷한 이름의 라벨을 공통 클래스로 매핑합니다. 예를 들어 보행자 표기나 계단·횡단보도의 여러 명칭을 통합하므로, 실제 다운로드한 버전의 라벨과 매핑이 일치하는지 확인해야 합니다.
 
@@ -133,7 +135,7 @@ COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 
 | 6 | `crosswalk` | 횡단보도 |
 | 7 | `people` | 보행자 |
 
-### 실제 학습 설정
+### ⚙️ 실제 학습 설정
 
 | 단계 | 코드 설정 |
 | :--- | :--- |
