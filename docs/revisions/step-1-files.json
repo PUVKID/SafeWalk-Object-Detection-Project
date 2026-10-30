@@ -1,0 +1,12 @@
+[
+  {
+    "path": "safewalk_train_v8_fixed (1).ipynb",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 89091,
+      "sha256": "6c84f6c03088091435388507c9a96e173f8eeef158f5f2af37925d1e8f1cc55e"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "path": "configs/dataset_8class.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 185,
+      "sha256": "3b357816f1a1ae208a6c9604c605b27cf9db71a1d5bd1d9e8fd21d5f25415973"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "configs/dataset_bicycle.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 193,
+      "sha256": "60a12653fe812439046ffcfa0ebd437e5d3cf21ffcc7248065bbb75ef6500250"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "configs/dataset_bollard.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 193,
+      "sha256": "403ed2e2abea6f1a3b3aeb1c7296adf9a450c5d790144ff8fd24a3e2c388761d"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "configs/dataset_car.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 189,
+      "sha256": "39dd9719def179d83e5bd7f204f6d6b7a9f3c31933060324dc6cc5b9084a4261"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "configs/dataset_crosswalk.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 195,
+      "sha256": "e3592f864f9c3eaffb6969f06735aa356cd934f4333db86b23cd37ac4dcaf2cf"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "configs/dataset_kickboard.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 195,
+      "sha256": "a9e195769c1f022b8889ce7468c8d3977007aacec408da5ebf032d51350d6646"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "configs/dataset_motorcycle.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 196,
+      "sha256": "aa503a072206f29c5f5f168bbefdba823e0b5cc78f09df921d4f98e0364f428e"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "configs/dataset_people.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 192,
+      "sha256": "b6968c828ba08b0d139fdef64089b01237cc640ed4b43535f1dfdf6ed0ddc58e"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "configs/dataset_stairs.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 192,
+      "sha256": "5f99fab83aaab5d0af34ea0ba2414975ededa2127062131248ed63f241bf372e"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/bicycle/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1659,
+      "sha256": "b884c2afcf4ff9eaa7ee6adb1700cbb215b6f3fdb79155b02877c4a2cc2fc729"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/bicycle/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 5193,
+      "sha256": "03ef6eef597e02902f9427057cd81d7d69587387506f31eae8f4064801faba9a"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/bollard/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1658,
+      "sha256": "451638782ff6bcc6461d3e7b21f58a1338e39df7321e537f57a4dce456aa5118"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/bollard/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 3307,
+      "sha256": "a0ca9849217d7751d81e73dd25916c7d824b921ae309e10c2e295fa32622cbb4"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/car/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1646,
+      "sha256": "3a9343d644bc47603c27a5ba0761e27bbabe6f422f407e7a579dd994accdd866"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/car/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 2008,
+      "sha256": "9e168e673411660c378972834d0d7da622c79dcffbbc01cc253299d62796c075"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/crosswalk/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1664,
+      "sha256": "9eb44b90e13893810091d677bad32f9b2d15f8ed00d8d6cffc2596b4c63e7d43"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/crosswalk/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1454,
+      "sha256": "042d3017f6e4fd947b45bb4624dcb68431ce02110a5994da155ab4b5e7cb3a8a"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/kickboard/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1665,
+      "sha256": "fc2e419c826eb62feec82f52eae0eb93abbe9c5ad917da9a430ffc9c499eaaa2"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/kickboard/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 5188,
+      "sha256": "6fff9b077c99004cc95e5914466957d5f4fb8fc7676897ad7d710ce8d4f447d0"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/motorcycle/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1668,
+      "sha256": "60b4aca951a48dc541620014ec2fecdb3158ed6325cd31ca2f700ca82117b5c3"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/motorcycle/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 3919,
+      "sha256": "c13cc344e00b3ffbc7c9017347baeef66b67ebcb8053c1f754ec50c7cda74241"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/people/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1656,
+      "sha256": "d0b50257277df5988683def944546ce757646c039e4c6fd360fbb243db7ecb5e"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/people/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 5172,
+      "sha256": "2a6bc1c21e00cca92e892777b813f28d6757d9c7b126765f1fd806570783b364"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/stairs/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1655,
+      "sha256": "284c93ed0bac9d3aba5e0d60b3015f9d9b33996c1c60cfe5062197aaa9d0efd3"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/phase1_per_class/stairs/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 3918,
+      "sha256": "5870fa692df409661e6dbf9503cf3587255a561bbcc8df62fc85edc1f9bb20f3"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/safewalk_v8/args.yaml",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1689,
+      "sha256": "87d707018468bf8c537dbaef0701c4f40a4c90dff2adac5800f9d151332683dc"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "models/safewalk_v8/results.csv",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 1559,
+      "sha256": "3e83f23f7d33157adefb7bf5bd5db4aaeadfbc2962c94bafb0bbd6f62657cb47"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  },
+  {
+    "path": "safewalk_train_v8_fixed (1)_이전도커버전.ipynb",
+    "change": "추가",
+    "before": null,
+    "after": {
+      "bytes": 89669,
+      "sha256": "3d9d58b3f3524a5f3a144cc26e9cdf345c0ced4a6e422d4a8ef189e7ab96b6ff"
+    },
+    "kind": "UTF-8 전체 텍스트"
+  }
+]
