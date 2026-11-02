@@ -1,17 +1,8 @@
-<div align="center">
+# 🗂️ 차수별 독립 프로젝트 안내
 
-# 🗂️ 차수별 변화
+[🏠 프로젝트 첫 화면](../README.md)에서 전체 구현을 읽고 아래에서 실제 차수·최종본·부분 자료를 선택할 수 있습니다. 각 상세 페이지에는 해당 코드·설정·자료 종류에 맞는 기능·사용 조건·실제 관측과 전체 비교를 연결했습니다.
 
-[🏠 프로젝트](../README.md) · [📚 기존 상세 안내](VERSIONS.md)
-
-</div>
-
-| 자료 | 내용 | 파일 | 상세·비교 |
-| :--- | :--- | :--- | :--- |
-| **기본 노트북** | 보행환경 8개 클래스와 두 단계 YOLO 학습 | [📁 열기](../safewalk_train_v8_fixed%20%281%29.ipynb) | [📖 상세](revisions/step-1.md) · [🔎 기존 설명](versions/stage-1.md) · [자료 폴더](revisions) · [전체 비교](revisions/step-1.patch) |
-| **실험 구성과 기록** | 클래스별 설정·이전 실행 노트북·에폭별 학습 지표 | [📁 열기](../pbl2-main) | [📖 상세](revisions/step-2.md) · [🔎 기존 설명](versions/stage-1.md) · [전체 비교](revisions/step-2.patch) |
-
-
-
-
-
+| 차수·자료 | 자료 폴더·원본 | 상세 설명 | 직전 비교·범위 |
+|---|---|---|---|
+| 기본 노트북 | [자료 폴더](materials/001-step-1) · [원본 파일](../safewalk_train_v8_fixed%20%281%29.ipynb) | [상세 설명](materials/001-step-1/README.md) | [전체 비교·범위](revisions/step-1.patch) |
+| 실험 구성과 기록 | [자료 폴더](../pbl2-main) | [상세 설명](revisions/step-2.md) | [전체 비교·범위](revisions/step-2.patch) |

@@ -16,14 +16,32 @@
 
 </div>
 
+<a name="implementation-details"></a>
+
+## 🧩 노트북 셀과 실험 기록의 연결
+
+데이터 다운로드→원본 클래스명/ID 매핑→YOLO bbox 병합→분할→클래스별 학습→시작 모델 선택→전체 미세조정→평가/추론/내보내기의 순서입니다. 기본 노트북은 이 흐름의 구현이고 pbl2-main은 설정 YAML·실행 노트북·에폭 CSV를 묶은 실험 자료입니다. 같은 파일명이라도 이전 도커 버전과 현재 노트북을 구분합니다.
+
+클래스는 bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people입니다. bbox5항목만 사용하고 세그멘테이션 줄을 제외합니다. 원본 데이터의 train/valid/test를 합쳐 다시 나누며, 내용 중복 탐지 없이 이름 매핑이 전부 불일치하면 정렬 ID fallback을 적용하므로 매핑 출력과 원본 분포를 확인해야 합니다.
+
+볼라드·횡단보도 각각 min(100,15%) 테스트를 먼저 배정한 뒤 남은 영상74%/21%/잔여를 train/val/test로 나눕니다. Phase1의 테스트 성적으로 Phase2 시작 모델을 선택하므로 최종 같은 테스트 수치는 선택과 독립된 평가가 아닙니다. 모델 이름·목표값을 보행 안전 성과로 해석하지 않습니다.
+
+Phase1은 YOLOv8x·640·AdamW·클래스별15~40epoch, Phase2는150epoch·lr0=0.0005·patience=0을 구성합니다. 각 실제 실행의 args.yaml과 results.csv를 묶어 epoch·precision·recall·mAP50·mAP50–95를 읽습니다. 추론 conf0.4·IoU0.45·640·max_det50과10회 준비/100회 속도 반복은 학습 설정·시험 성능과 별개입니다.
+
+COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다른 표시 환경이 필요합니다. 병합·분할 셀이 merged/processed/per_class를 다시 만들기 때문에 전용 실험 경로와 이전 결과 보존을 먼저 확인합니다. 위험 문구는 탐지 객체 종류에 따른 안내이며 거리나 충돌 확률을 계산하지 않습니다.
+
+[🗂️ 각 차수의 코드·조건·관측·전체 비교](docs/REVISION_INDEX.md)
+
+
+
 ## 🗂️ 차수와 자료 둘러보기
 
 [**📖 전체 차수·파일별 변화 보기 →**](docs/REVISION_INDEX.md)
 
-| 차수·자료 | 내용 | 원본 파일 | 상세·비교 |
-| :--- | :--- | :--- | :--- |
-| **기본 노트북** | 보행환경 8클래스·두 단계 학습 | [📁 열기](safewalk_train_v8_fixed%20%281%29.ipynb) | [📖 설명](docs/revisions/step-1.md) · [자료 폴더](docs/revisions) · [전체 비교](docs/revisions/step-1.patch) |
-| **실험 구성과 기록** | 설정·이전 실행 노트북·에폭 지표 | [📁 열기](pbl2-main) | [📖 설명](docs/revisions/step-2.md) · [전체 비교](docs/revisions/step-2.patch) |
+| 차수·자료 | 자료 폴더·원본 | 상세 설명 | 직전 비교·범위 |
+|---|---|---|---|
+| 기본 노트북 | [자료 폴더](docs/materials/001-step-1) · [원본 파일](safewalk_train_v8_fixed%20%281%29.ipynb) | [상세 설명](docs/materials/001-step-1/README.md) | [전체 비교·범위](docs/revisions/step-1.patch) |
+| 실험 구성과 기록 | [자료 폴더](pbl2-main) | [상세 설명](docs/revisions/step-2.md) | [전체 비교·범위](docs/revisions/step-2.patch) |
 
 
 <a name="overview"></a>
@@ -188,8 +206,3 @@ COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 
 **보행환경의 다양한 객체를 같은 기준으로 학습합니다.**
 
 </div>
-
-
-
-
-
