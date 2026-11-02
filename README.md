@@ -22,8 +22,8 @@
 
 | 차수·자료 | 내용 | 원본 파일 | 상세·비교 |
 | :--- | :--- | :--- | :--- |
-| **기본 노트북** | 보행환경 8클래스·두 단계 학습 | [📁 열기](safewalk_train_v8_fixed%20%281%29.ipynb) | [📖 설명](docs/revisions/step-1.md) |
-| **실험 구성과 기록** | 설정·이전 실행 노트북·에폭 지표 | [📁 열기](pbl2-main) | [📖 설명](docs/revisions/step-2.md) |
+| **기본 노트북** | 보행환경 8클래스·두 단계 학습 | [📁 열기](safewalk_train_v8_fixed%20%281%29.ipynb) | [📖 설명](docs/revisions/step-1.md) · [자료 폴더](docs/revisions) · [전체 비교](docs/revisions/step-1.patch) |
+| **실험 구성과 기록** | 설정·이전 실행 노트북·에폭 지표 | [📁 열기](pbl2-main) | [📖 설명](docs/revisions/step-2.md) · [전체 비교](docs/revisions/step-2.patch) |
 
 
 <a name="overview"></a>
@@ -192,13 +192,4 @@ COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 
 
 
 
-<details>
-<summary>🧹 공개 자료 정리 기록</summary>
 
-| 검수 대상 | 연결 자료 | 상세·이번 비교 |
-| :--- | :--- | :--- |
-| **기존 코드와 자료** | [📁 검수 자료](docs/publication-review) | [📖 정리 내용](docs/publication-review/item-1.md) · [🔎 파일 비교](docs/publication-review/공개파일변경.json) |
-
-[🗂️ 전체 차수와 자료](docs/REVISION_INDEX.md)
-
-</details>
