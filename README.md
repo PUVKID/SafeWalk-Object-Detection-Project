@@ -1,6 +1,6 @@
-<div align="center">
 
-# 🚶 SafeWalk Project
+<a name="-safewalk-project"></a>
+# SafeWalk Project
 
 여러 데이터셋을 통합해 보행환경의 8개 클래스를 탐지합니다.
 
@@ -14,29 +14,29 @@
 
 [핵심 구성](#input-processing-output)
 
-</div>
-
 <a name="implementation-details"></a>
 
-## 🧩 노트북 셀과 실험 기록의 연결
+<a name="-노트북-셀과-실험-기록의-연결"></a>
+## 노트북 셀과 실험 기록의 연결
 
 데이터 다운로드→원본 클래스명/ID 매핑→YOLO bbox 병합→분할→클래스별 학습→시작 모델 선택→전체 미세조정→평가/추론/내보내기의 순서입니다. 기본 노트북은 이 흐름의 구현이고 pbl2-main은 설정 YAML·실행 노트북·에폭 CSV를 묶은 실험 자료입니다. 같은 파일명이라도 이전 도커 버전과 현재 노트북을 구분합니다.
 
-클래스는 bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people입니다. bbox5항목만 사용하고 세그멘테이션 줄을 제외합니다. 원본 데이터의 train/valid/test를 합쳐 다시 나누며, 내용 중복 탐지 없이 이름 매핑이 전부 불일치하면 정렬 ID fallback을 적용하므로 매핑 출력과 원본 분포를 확인해야 합니다.
+클래스는 bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people입니다. bbox 5항목만 사용하고 세그멘테이션 줄을 제외합니다. 원본 데이터의 train/valid/test를 합쳐 다시 나누며, 내용 중복 탐지 없이 이름 매핑이 전부 불일치하면 정렬 ID fallback을 적용하므로 매핑 출력과 원본 분포를 확인해야 합니다.
 
-볼라드·횡단보도 각각 min(100,15%) 테스트를 먼저 배정한 뒤 남은 영상74%/21%/잔여를 train/val/test로 나눕니다. Phase1의 테스트 성적으로 Phase2 시작 모델을 선택하므로 최종 같은 테스트 수치는 선택과 독립된 평가가 아닙니다. 모델 이름·목표값을 보행 안전 성과로 해석하지 않습니다.
+볼라드와 횡단보도 각각에 min(100,15%) 테스트를 먼저 배정한 뒤 남은 영상을 74%/21%/잔여로 train/val/test에 나눕니다. Phase1의 테스트 성적으로 Phase2 시작 모델을 선택하므로 같은 테스트의 최종 수치는 선택과 독립된 평가가 아닙니다. 모델 이름과 목표값을 보행 안전 성과로 해석하지 않습니다.
 
-Phase1은 YOLOv8x·640·AdamW·클래스별15~40epoch, Phase2는150epoch·lr0=0.0005·patience=0을 구성합니다. 각 실제 실행의 args.yaml과 results.csv를 묶어 epoch·precision·recall·mAP50·mAP50–95를 읽습니다. 추론 conf0.4·IoU0.45·640·max_det50과10회 준비/100회 속도 반복은 학습 설정·시험 성능과 별개입니다.
+Phase1은 YOLOv8x·640·AdamW·클래스별 15~40 epoch, Phase2는 150 epoch·lr0=0.0005·patience=0을 구성합니다. 각 실제 실행의 args.yaml과 results.csv를 묶어 epoch·precision·recall·mAP50·mAP50–95를 읽습니다. 추론 conf 0.4·IoU 0.45·640·max_det 50과 10회 준비/100회 속도 반복은 학습 설정·시험 성능과 별개입니다.
 
 COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다른 표시 환경이 필요합니다. 병합·분할 셀이 merged/processed/per_class를 다시 만들기 때문에 전용 실험 경로와 이전 결과 보존을 먼저 확인합니다. 위험 문구는 탐지 객체 종류에 따른 안내이며 거리나 충돌 확률을 계산하지 않습니다.
 
-[🗂️ 각 차수의 코드·조건·관측·전체 비교](docs/REVISION_INDEX.md)
+[각 차수의 코드·조건·관측·전체 비교](docs/REVISION_INDEX.md)
 
 
 
-## 🗂️ 차수와 자료 둘러보기
+<a name="️-차수와-자료-둘러보기"></a>
+## 차수와 자료 둘러보기
 
-[**📖 전체 차수·파일별 변화 보기 →**](docs/REVISION_INDEX.md)
+[**전체 차수·파일별 변화 보기 →**](docs/REVISION_INDEX.md)
 
 | 차수·자료 | 자료 폴더·원본 | 상세 설명 | 직전 비교·범위 |
 |---|---|---|---|
@@ -46,11 +46,13 @@ COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다�
 
 <a name="overview"></a>
 
-## 👨‍💻 제가 구현한 부분
+<a name="‍-제가-구현한-부분"></a>
+## 제가 구현한 부분
 
 보행환경 8개 클래스의 데이터셋 매핑·통합, YOLO 학습·평가 노트북과 실험 기록을 정리했습니다. 이 저장소는 제가 수행한 객체 탐지 모델 개발 범위를 다룹니다.
 
-## ✨ 주요 개발 내용
+<a name="-주요-개발-내용"></a>
+## 주요 개발 내용
 
 보행 안전 관련 8개 객체의 학습·평가 노트북과 실행 자료를 보관합니다.
 
@@ -65,20 +67,22 @@ COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다�
 
 <a name="input-processing-output"></a>
 
-## 🔄 입력·처리·출력
+<a name="-입력처리출력"></a>
+## 입력·처리·출력
 
 | 단계 | 이 프로젝트에서 다루는 내용 |
 | :--- | :--- |
-| 📥 입력 | Roboflow·COCO 등 객체 영상과 라벨 |
-| ⚙️ 처리 | 클래스 ID 통합, YOLOv8x 클래스별 학습과 전체 미세조정 |
-| 📤 출력 | 8클래스 탐지·평가·영상 데모 |
+| 입력 | Roboflow·COCO 등 객체 영상과 라벨 |
+| 처리 | 클래스 ID 통합, YOLOv8x 클래스별 학습과 전체 미세조정 |
+| 출력 | 8클래스 탐지·평가·영상 데모 |
 
 
 ---
 
 <a name="introduction"></a>
 
-## ✨ 프로젝트 소개
+<a name="-프로젝트-소개"></a>
+## 프로젝트 소개
 
 보행환경의 여러 객체를 하나의 분류 체계로 묶어 탐지 모델을 학습하는 프로젝트입니다.
 
@@ -106,7 +110,8 @@ flowchart LR
 
 <a name="repository-structure"></a>
 
-## 📁 저장소 구성
+<a name="-저장소-구성"></a>
+## 저장소 구성
 
 ```text
 .
@@ -122,7 +127,8 @@ flowchart LR
 - [보존된 실험 폴더](pbl2-main/).
 - [버전 기록](docs/VERSIONS.md).
 
-## 🧩 주요 기술
+<a name="-주요-기술"></a>
+## 주요 기술
 
 데이터를 준비하고 모델을 학습하는 데 Ultralytics YOLO, PyTorch, OpenCV, Roboflow, pandas, Matplotlib, PyYAML을 사용합니다. 노트북의 기본 모델은 YOLOv8x이며, GPU 메모리에 따라 배치 크기를 정하는 분기가 있습니다.
 
@@ -130,7 +136,8 @@ flowchart LR
 
 <a name="quick-start"></a>
 
-## 🚀 빠른 시작
+<a name="-빠른-시작"></a>
+## 빠른 시작
 
 ```powershell
 python -m pip install jupyterlab
@@ -149,7 +156,8 @@ COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 
 
 <a name="data-settings"></a>
 
-## 📊 데이터 구성과 클래스
+<a name="-데이터-구성과-클래스"></a>
+## 데이터 구성과 클래스
 
 | ID | 클래스 | 의미 |
 | :--- | :--- | :--- |
@@ -162,7 +170,8 @@ COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 
 | 6 | `crosswalk` | 횡단보도 |
 | 7 | `people` | 보행자 |
 
-### ⚙️ 실제 학습 설정
+<a name="️-실제-학습-설정"></a>
+### 실제 학습 설정
 
 | 단계 | 코드 설정 |
 | :--- | :--- |
@@ -185,7 +194,8 @@ COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 
 
 <a name="troubleshooting"></a>
 
-## 🛠️ 문제 해결
+<a name="️-문제-해결"></a>
+## 문제 해결
 
 | 증상 | 확인할 내용 |
 | :--- | :--- |

@@ -1,24 +1,29 @@
-<div align="center">
 
-# 🚶 실험 구성과 기록
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+<a name="-실험-구성과-기록"></a>
+# 실험 구성과 기록
+
+8클래스 통합 실험의 구성과 기록을 정리했습니다.
+
+
 
 **기술 분류:** Python · Jupyter · Ultralytics YOLOv8x · PyTorch · 8클래스 탐지
 
 [핵심 기능](#features) · [사용 흐름](#usage) · [자료 구성](#structure) · [준비와 실행](#setup) · [결과 읽기](#results) · [직전 변경](#changes)
 
-</div>
 
-[🏠 프로젝트](../../README.md) · [🗂️ 전체 차수](../REVISION_INDEX.md) · [📁 원본 자료](../../pbl2-main) · [← 이전: 기본 노트북](../materials/001-step-1/README.md)
 
-## 🎯 목적과 이 차수의 역할
+[프로젝트](../../README.md) · [전체 차수](../REVISION_INDEX.md) · [원본 자료](../../pbl2-main) · [← 이전: 기본 노트북](../materials/001-step-1/README.md)
+
+<a name="-목적과-이-차수의-역할"></a>
+## 목적과 이 차수의 역할
 
 bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
 
 <a name="features"></a>
 
-## ✨ 핵심 기능과 보존 범위
+<a name="-핵심-기능과-보존-범위"></a>
+## 핵심 기능과 보존 범위
 
 | 항목 | 이 차수에서 확인할 내용 |
 |---|---|
@@ -27,17 +32,19 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 | 3 | 데이터 분할은 강제 테스트 배정 후 남은 영상 74% 학습·21% 검증·나머지 테스트입니다. 표제의 7:2:1과 실제 배정은 다릅니다. |
 | 4 | 추론·영상 데모·내보내기 경로는 학습과 별도이며 실제 장치 환경과 가중치가 필요합니다. |
 
-## 🔄 입력·처리·출력
+<a name="-입력처리출력"></a>
+## 입력·처리·출력
 
 | 단계 | 내용 |
 |---|---|
-| 📥 입력 | Roboflow·COCO 계열 영상·라벨과 클래스 매핑 |
-| ⚙️ 처리 | 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가 |
-| 📤 출력 | 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력 |
+| 입력 | Roboflow·COCO 계열 영상·라벨과 클래스 매핑 |
+| 처리 | 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가 |
+| 출력 | 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력 |
 
 <a name="usage"></a>
 
-## 🖐️ 화면과 사용 흐름
+<a name="️-화면과-사용-흐름"></a>
+## 화면과 사용 흐름
 
 1. configs의 공통 8클래스·클래스별 YAML을 읽습니다.
 2. models 아래 각 실험의 args.yaml과 results.csv를 같은 실행 단위로 대조합니다.
@@ -46,7 +53,8 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 
 <a name="structure"></a>
 
-## 📁 실제 자료 구성
+<a name="-실제-자료-구성"></a>
+## 실제 자료 구성
 
 | 경로 | 자료 종류 |
 |---|---|
@@ -56,7 +64,8 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 | [safewalk_train_v8_fixed (1).ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29.ipynb) | IPYNB 파일 |
 | [safewalk_train_v8_fixed (1)_이전도커버전.ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29_%EC%9D%B4%EC%A0%84%EB%8F%84%EC%BB%A4%EB%B2%84%EC%A0%84.ipynb) | IPYNB 파일 |
 
-## 🧩 주요 모듈과 코드 읽기
+<a name="-주요-모듈과-코드-읽기"></a>
+## 주요 모듈과 코드 읽기
 
 | 파일 | 원문에 정의된 역할·구성 |
 |---|---|
@@ -65,7 +74,8 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 
 <a name="setup"></a>
 
-## 🚀 설치 환경과 실행·사용법
+<a name="-설치-환경과-실행사용법"></a>
+## 설치 환경과 실행·사용법
 
 Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는 /root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
@@ -83,11 +93,13 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 <a name="results"></a>
 
-## 📊 처리 결과와 출력 읽기
+<a name="-처리-결과와-출력-읽기"></a>
+## 처리 결과와 출력 읽기
 
 클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트값으로 Phase 2 시작 모델을 선택하므로 같은 시험값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
 
-## 🛠️ 제약과 문제 해결
+<a name="️-제약과-문제-해결"></a>
+## 제약과 문제 해결
 
 | 상황 | 확인할 내용 |
 |---|---|
@@ -97,16 +109,17 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 <a name="changes"></a>
 
-## 🔍 직전 자료와 전체 비교
+<a name="-직전-자료와-전체-비교"></a>
+## 직전 자료와 전체 비교
 
 기본 노트북에서 실험 구성과 기록로 이어지는 실제 파일 비교입니다.
 
-[📄 전체 비교·자료 범위](step-2.patch)
+[전체 비교·자료 범위](step-2.patch)
 
 추가·수정·삭제, 주석·공백·개행과 바이너리 크기·해시는 연결된 원래 비교 자료에서 확인합니다.
 
 <details>
-<summary>📚 파일별 비교·크기·해시 자세히 보기</summary>
+<summary>파일별 비교·크기·해시 자세히 보기</summary>
 
 [전체 텍스트 차이](step-2.patch) · [파일별 크기·SHA-256](step-2-files.json)
 
@@ -143,4 +156,4 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 </details>
 
-[🏠 프로젝트](../../README.md) · [🗂️ 전체 차수](../REVISION_INDEX.md) · [📁 원본 자료](../../pbl2-main) · [← 이전: 기본 노트북](../materials/001-step-1/README.md)
+[프로젝트](../../README.md) · [전체 차수](../REVISION_INDEX.md) · [원본 자료](../../pbl2-main) · [← 이전: 기본 노트북](../materials/001-step-1/README.md)
