@@ -239,7 +239,7 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 
 ### LEVEL 4 · 이 차수 구현의 실제 근거
 
-| 파일 · 원문에 정의된 역할·구성 |
+| 내용 |
 | --- |
 | **파일:** [safewalk_train_v8_fixed (1).ipynb](../../../safewalk_train_v8_fixed%20%281%29.ipynb)<br>**원문에 정의된 역할·구성:** 노트북 23개 셀 |
 
@@ -365,14 +365,14 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 <a name="-실제-자료-구성"></a>
 ## 실제 자료 구성
 
-| 경로 · 자료 종류 |
+| 내용 |
 | --- |
 | **경로:** [safewalk_train_v8_fixed (1).ipynb](../../../safewalk_train_v8_fixed%20%281%29.ipynb)<br>**자료 종류:** 자료 원문 |
 
 <a name="-주요-모듈과-코드-읽기"></a>
 ## 주요 모듈과 코드 읽기
 
-| 파일 · 원문에 정의된 역할·구성 |
+| 내용 |
 | --- |
 | **파일:** [safewalk_train_v8_fixed (1).ipynb](../../../safewalk_train_v8_fixed%20%281%29.ipynb)<br>**원문에 정의된 역할·구성:** 노트북 23개 셀 |
 

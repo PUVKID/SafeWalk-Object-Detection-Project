@@ -7,7 +7,7 @@
 <!-- project-levels:start -->
 ## 읽는 수준 선택
 
-| 수준 · 이 안내에서 읽을 내용 |
+| 내용 |
 | --- |
 | **수준:** [LEVEL 1 - Beginner](docs/읽기안내/레벨1.md)<br>**이 안내에서 읽을 내용:** 낯선 용어를 풀어 쓰며 실제 동작·예시·오해하기 쉬운 범위를 읽습니다. |
 | **수준:** [LEVEL 2 - Explorer](docs/읽기안내/레벨2.md)<br>**이 안내에서 읽을 내용:** 입력·처리·출력과 기능 사이의 연결, 차수 변화를 따라갑니다. |
@@ -58,7 +58,7 @@ COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다�
 
 [**전체 차수·파일별 변화 보기 →**](docs/REVISION_INDEX.md)
 
-| 차수·자료 · 자료 폴더·원본 · 상세 설명 · 직전 비교·범위 |
+| 내용 |
 | --- |
 | **차수·자료:** 기본 노트북<br>**자료 폴더·원본:** [자료 폴더](docs/materials/001-step-1) · [원본 파일](safewalk_train_v8_fixed%20%281%29.ipynb)<br>**상세 설명:** [상세 설명](docs/materials/001-step-1/README.md)<br>**직전 비교·범위:** [전체 비교·범위](docs/revisions/step-1.patch) |
 | **차수·자료:** 실험 구성과 기록<br>**자료 폴더·원본:** [자료 폴더](pbl2-main)<br>**상세 설명:** [상세 설명](docs/revisions/step-2.md)<br>**직전 비교·범위:** [전체 비교·범위](docs/revisions/step-2.patch) |
