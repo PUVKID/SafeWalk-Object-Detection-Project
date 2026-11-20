@@ -1,19 +1,19 @@
 <a name="️-현재-공개-자료"></a>
 # 현재 공개 자료
 
-| 차수·위치 | 자료 |
-| --- | --- |
-| 기본 노트북 | **파일 수** 1<br>**자료** [열기](../safewalk_train_v8_fixed%20%281%29.ipynb)<br>**설명** [상세](../docs/revisions/step-1.md) |
-| 실험 구성과 기록 | **파일 수** 29<br>**자료** [열기](../pbl2-main)<br>**설명** [상세](../docs/revisions/step-2.md) |
+| 차수·위치 | 파일 수 | 자료 | 설명 |
+| --- | --- | --- | --- |
+| 기본 노트북 | 1 | [열기](../safewalk_train_v8_fixed%20%281%29.ipynb) | [상세](../docs/revisions/step-1.md) |
+| 실험 구성과 기록 | 29 | [열기](../pbl2-main) | [상세](../docs/revisions/step-2.md) |
 
 파일 수는 표에 적힌 각 경로의 전체 파일 수입니다. 코드·입력 시트·보고서와 관리 README를 포함하며, 폴더 사이에 같은 파일이 있으면 각 보존 위치에서 셉니다. [전체 차수와 실제 비교](REVISION_INDEX.md)에서 파일별 추가·변경과 해시를 확인할 수 있습니다.
 
 <a name="-자료별-의미와-근거"></a>
 ## 자료별 의미와 근거
 
-| 자료 | 내용 |
-| --- | --- |
-| [기본](versions/stage-1.md) | **실제 경로** `safewalk_train_v8_fixed (1).ipynb`<br>**목적과 내용** 보행 안전 관련 8개 객체의 학습·평가 노트북과 실행 자료를 보관합니다.<br>**근거** [자료](../safewalk_train_v8_fixed%20%281%29.ipynb) |
+| 자료 | 실제 경로 | 목적과 내용 | 근거 |
+| --- | --- | --- | --- |
+| [기본](versions/stage-1.md) | `safewalk_train_v8_fixed (1).ipynb` | 보행 안전 관련 8개 객체의 학습·평가 노트북과 실행 자료를 보관합니다. | [자료](../safewalk_train_v8_fixed%20%281%29.ipynb) |
 
 연구 자료와 관련 코드를 경로별로 정리했습니다.
 

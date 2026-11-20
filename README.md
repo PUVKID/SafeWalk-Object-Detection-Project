@@ -2,7 +2,7 @@
 <a name="-safewalk-project"></a>
 # SafeWalk Project
 
-여러 데이터셋을 통합해 보행환경의 8개 클래스를 탐지합니다.
+여러 데이터 셋을 통합해 보행 환경의 8개 클래스를 탐지합니다.
 
 <!-- project-levels:start -->
 ## 읽는 수준 선택
@@ -19,8 +19,7 @@
 <!-- project-levels:end -->
 
 
-
-**기술 분류:** 컴퓨터 비전 › 딥러닝 객체 검출 › 다중 데이터셋·8클래스 통합
+**기술 분류:** 컴퓨터 비전 › 딥 러닝 객체 검출 › 다중 데이터 셋·8 클래스 통합
 
 `Python`
 `YOLO`
@@ -37,20 +36,29 @@
 
 데이터 다운로드→원본 클래스명/ID 매핑→YOLO bbox 병합→분할→클래스별 학습→시작 모델 선택→전체 미세조정→평가/추론/내보내기의 순서입니다.
 
-기본 노트북은 이 흐름의 구현이고 pbl2-main은 설정 YAML·실행 노트북·에폭 CSV를 묶은 실험 자료입니다. 같은 파일명이라도 이전 도커 버전과 현재 노트북을 구분합니다.
+기본 노트북은 이 흐름의 구현이고 pbl2-main은 설정 YAML·실행 노트북·에폭 CSV를 묶은 실험 자료입니다. 같은 파일 명이라도 이 전 도커 버전과 현재 노트북을 구분합니다.
 
-클래스는 bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people입니다. bbox 5항목만 사용하고 세그멘테이션 줄을 제외합니다. 원본 데이터의 train/valid/test를 합쳐 다시 나누며, 내용 중복 탐지 없이 이름 매핑이 전부 불일치하면 정렬 ID fallback을 적용하므로 매핑 출력과 원본 분포를 확인해야 합니다.
+클래스는 bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people입니다. bbox 5 항목만 사용하고 세그멘테이션 줄을 제외합니다.
+
+원본 데이터의 train/valid/test를 합쳐 다시 나누며, 내용 중복 탐지 없이 이름 매핑이 전부 불일치하면 정렬 ID fallback을 적용하므로 매핑 출력과 원본 분포를 확인해야 합니다.
 
 볼라드와 횡단보도 각각에 min(100,15%) 테스트를 먼저 배정한 뒤 남은 영상을 74%/21%/잔여로 train/val/test에 나눕니다.
 
-Phase1의 테스트 성적으로 Phase2 시작 모델을 선택하므로 같은 테스트의 최종 수치는 선택과 독립된 평가가 아닙니다. 모델 이름과 목표값을 보행 안전 성과로 해석하지 않습니다.
+Phase1의 테스트 성적으로 Phase2 시작 모델을 선택하므로 같은 테스트의 최종 수치는 선택과 독립된 평가가 아닙니다. 모델 이름과 목표 값을 보행 안전 성과로 해석하지 않습니다.
 
-Phase1은 YOLOv8x·640·AdamW·클래스별 15~40 epoch, Phase2는 150 epoch·lr0=0.0005·patience=0을 구성합니다. 각 실제 실행의 args.yaml과 results.csv를 묶어 epoch·precision·recall·mAP50·mAP50–95를 읽습니다. 추론 conf 0.4·IoU 0.45·640·max_det 50과 10회 준비/100회 속도 반복은 학습 설정·시험 성능과 별개입니다.
+Phase1은 YOLOv8x·640·AdamW·클래스별 15~40 epoch, Phase2는 150 epoch·lr0 =0.0005·patience =0을 구성합니다.
 
-COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다른 표시 환경이 필요합니다. 병합·분할 셀이 merged/processed/per_class를 다시 만들기 때문에 전용 실험 경로와 이전 결과 보존을 먼저 확인합니다. 위험 문구는 탐지 객체 종류에 따른 안내이며 거리나 충돌 확률을 계산하지 않습니다.
+각 실제 실행의 args.yaml과 results.csv를 묶어 epoch·precision·recall·mAP50·mAP50 –95를 읽습니다.
+
+추론 conf 0.4·IoU 0.45·640·max_det 50과 10회 준비/100회 속도 반복은 학습 설정·시험 성능과 별개입니다.
+
+COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다른 표시 환경이 필요합니다.
+
+병합·분할 셀이 merged/processed/per_class를 다시 만들기 때문에 전용 실험 경로와 이전 결과 보존을 먼저 확인합니다.
+
+위험 문구는 탐지 객체 종류에 따른 안내이며 거리나 충돌 확률을 계산하지 않습니다.
 
 [각 차수의 코드·조건·관측·전체 비교](docs/REVISION_INDEX.md)
-
 
 
 <a name="️-차수와-자료-둘러보기"></a>
@@ -58,10 +66,10 @@ COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다�
 
 [**전체 차수·파일별 변화 보기 →**](docs/REVISION_INDEX.md)
 
-| 차수·자료 | 자료 |
-| --- | --- |
-| 기본 노트북 | **자료 폴더·원본** [자료 폴더](docs/materials/001-step-1) · [원본 파일](safewalk_train_v8_fixed%20%281%29.ipynb)<br>**상세 설명** [상세 설명](docs/materials/001-step-1/README.md)<br>**직전 비교·범위** [전체 비교·범위](docs/revisions/step-1.patch) |
-| 실험 구성과 기록 | **자료 폴더·원본** [자료 폴더](pbl2-main)<br>**상세 설명** [상세 설명](docs/revisions/step-2.md)<br>**직전 비교·범위** [전체 비교·범위](docs/revisions/step-2.patch) |
+| 차수·자료 | 자료 폴더·원본 | 상세 설명 | 직전 비교·범위 |
+| --- | --- | --- | --- |
+| 기본 노트북 | [자료 폴더](docs/materials/001-step-1) · [원본 파일](safewalk_train_v8_fixed%20%281%29.ipynb) | [상세 설명](docs/materials/001-step-1/README.md) | [전체 비교·범위](docs/revisions/step-1.patch) |
+| 실험 구성과 기록 | [자료 폴더](pbl2-main) | [상세 설명](docs/revisions/step-2.md) | [전체 비교·범위](docs/revisions/step-2.patch) |
 
 
 <a name="overview"></a>
@@ -69,7 +77,7 @@ COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다�
 <a name="‍-제가-구현한-부분"></a>
 ## 제가 구현한 부분
 
-보행환경 8개 클래스의 데이터셋 매핑·통합, YOLO 학습·평가 노트북과 실험 기록을 정리했습니다.
+보행 환경 8개 클래스의 데이터 셋 매핑·통합, YOLO 학습·평가 노트북과 실험 기록을 정리했습니다.
 
 <a name="-주요-개발-내용"></a>
 ## 주요 개발 내용
@@ -94,7 +102,7 @@ COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다�
 | --- | --- |
 | 입력 | Roboflow·COCO 등 객체 영상과 라벨 |
 | 처리 | 클래스 ID 통합, YOLOv8x 클래스별 학습과 전체 미세조정 |
-| 출력 | 8클래스 탐지·평가·영상 데모 |
+| 출력 | 8 클래스 탐지·평가·영상 데모 |
 
 
 ---
@@ -106,12 +114,12 @@ COCO 분기는 fiftyone이 필요하고 웹캠 GUI에는 headless OpenCV와 다�
 
 보행환경의 여러 객체를 하나의 분류 체계로 묶어 탐지 모델을 학습하는 프로젝트입니다.
 
-SafeWalk는 보행환경을 구성하는 여덟 종류의 객체를 YOLO로 탐지하기 위한 학습 노트북입니다. Roboflow와 COCO 등 서로 다른 데이터의 클래스 표기를 공통 ID로 바꿔 통합하는 부분을 포함합니다.
+SafeWalk는 보행 환경을 구성하는 여덟 종류의 객체를 YOLO로 탐지하기 위한 학습 노트북입니다. Roboflow와 COCO 등 서로 다른 데이터의 클래스 표기를 공통 ID로 바꿔 통합하는 부분을 포함합니다.
 
 | 기능 | 구현 내용 |
 | --- | --- |
 | 데이터 준비 | 여러 탐지 데이터셋의 다운로드·정리 |
-| 클래스 통합 | 원본 라벨 이름을 공통 8클래스 ID에 매핑 |
+| 클래스 통합 | 원본 라벨 이름을 공통 8 클래스 ID에 매핑 |
 | 학습 단계 | 클래스별 학습과 통합 미세조정 구성 |
 | 장치 설정 | GPU 확인 및 메모리에 따른 배치 크기 선택 |
 | 결과 확인 | 학습 기록·그래프·모델 출력 |
@@ -172,7 +180,11 @@ python -m jupyter lab "safewalk_train_v8_fixed (1).ipynb"
 
 CUDA 라이브러리 경로를 다루는 Linux 전용 셀이 있으므로 Windows 로컬 실행에서는 해당 환경 차이를 확인해야 합니다. 데이터셋과 완성 가중치는 별도로 준비합니다.
 
-COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 목록에는 `fiftyone`이 없습니다. 이 경로를 사용할 때는 별도 의존성을 준비해야 합니다. 데이터 병합·분할 셀은 기존 `merged`, `processed`, `per_class` 하위 결과를 지우고 다시 만드므로, `PROJECT_ROOT`를 전용 실험 폴더로 지정하고 이전 결과를 분리해 두세요.
+COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 목록에는 `fiftyone`이 없습니다.
+
+이 경로를 사용할 때는 별도 의존성을 준비해야 합니다.
+
+데이터 병합·분할 셀은 기존 `merged`, `processed`, `per_class` 하위 결과를 지우고 다시 만드므로, `PROJECT_ROOT`를 전용 실험 폴더로 지정하고 이전 결과를 분리해 두세요.
 
 <a name="data-settings"></a>
 
@@ -226,7 +238,7 @@ COCO 다운로드 분기는 `fiftyone.zoo`를 사용하지만 첫 설치 셀의 
 **코드 설정:** 무작위 이미지 한 장으로 준비 추론 10회 뒤 반복 추론 100회
 
 
-분할 셀의 제목은 7:2:1이지만 실제 비율은 위의 강제 테스트 배정과 74:21 분할에 따라 달라집니다. 테스트 이미지를 항상 100장 확보하는 것도 아닙니다. 또한 Phase 1의 테스트 평가값으로 Phase 2 시작 모델을 선택하므로, 같은 테스트셋의 최종 값에는 모델 선택의 영향이 포함됩니다.
+분할 셀의 제목은 7:2:1이지만 실제 비율은 위의 강제 테스트 배정과 74:21 분할에 따라 달라집니다. 테스트 이미지를 항상 100장 확보하는 것도 아닙니다. 또한 Phase 1의 테스트 평가 값으로 Phase 2 시작 모델을 선택하므로, 같은 테스트셋의 최종 값에는 모델 선택의 영향이 포함됩니다.
 
 데이터 이름 매핑에 일치 항목이 하나도 없을 때는 원본 ID와 대상 ID의 정렬 순서로 연결하는 fallback이 있습니다. 해당 경로가 쓰였는지 출력된 ID 매핑을 확인해야 합니다. 데이터 원본별 train·valid·test는 한데 모아 재분할하며, 이미지 내용의 중복 검출은 이 분할 코드에 없습니다.
 

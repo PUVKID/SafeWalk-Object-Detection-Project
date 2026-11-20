@@ -3,7 +3,7 @@
 
 [프로젝트 첫 화면](../README.md)에서 전체 구현을 읽고 아래에서 실제 차수·최종본·부분 자료를 선택할 수 있습니다. 각 상세 페이지에는 해당 코드·설정·자료 종류에 맞는 기능·사용 조건·실제 관측과 전체 비교를 연결했습니다.
 
-| 차수·자료 | 자료 |
-| --- | --- |
-| 기본 노트북 | **자료 폴더·원본** [자료 폴더](materials/001-step-1) · [원본 파일](../safewalk_train_v8_fixed%20%281%29.ipynb)<br>**상세 설명** [상세 설명](materials/001-step-1/README.md)<br>**직전 비교·범위** [전체 비교·범위](revisions/step-1.patch) |
-| 실험 구성과 기록 | **자료 폴더·원본** [자료 폴더](../pbl2-main)<br>**상세 설명** [상세 설명](revisions/step-2.md)<br>**직전 비교·범위** [전체 비교·범위](revisions/step-2.patch) |
+| 차수·자료 | 자료 폴더·원본 | 상세 설명 | 직전 비교·범위 |
+| --- | --- | --- | --- |
+| 기본 노트북 | [자료 폴더](materials/001-step-1) · [원본 파일](../safewalk_train_v8_fixed%20%281%29.ipynb) | [상세 설명](materials/001-step-1/README.md) | [전체 비교·범위](revisions/step-1.patch) |
+| 실험 구성과 기록 | [자료 폴더](../pbl2-main) | [상세 설명](revisions/step-2.md) | [전체 비교·범위](revisions/step-2.patch) |

@@ -13,13 +13,13 @@
 
 ### LEVEL 1 · 이 자료가 하는 일과 달라진 점
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
 ### LEVEL 1 · 실제 동작을 따라 읽기
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
-Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세조정을 구성합니다.
+Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세 조정을 구성합니다.
 
 데이터 분할은 강제 테스트 배정 후 남은 영상 74% 학습·21% 검증·나머지 테스트입니다. 표제의 7:2:1과 실제 배정은 다릅니다.
 
@@ -35,30 +35,30 @@ CSV는 값을 쉼표로 나눈 표 파일입니다. epoch는 학습 자료를 �
 
 ### LEVEL 1 · 준비하고 확인할 것
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는 /root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
 #### LEVEL 1 · 분할·학습·평가를 읽는 순서
 
-원본별 train·valid·test 영상을 모은 뒤 공통 8클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
+원본별 train·valid·test 영상을 모은 뒤 공통 8 클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
 
 이름 매핑이 하나도 맞지 않으면 ID 정렬 순서 fallback이 있으므로 출력 매핑을 확인해야 합니다. 이 분할 코드에는 이미지 내용 중복 검출이 없습니다.
 
-볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의74%를 학습,21%를 검증,나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
+볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의 74%를 학습,21%를 검증, 나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
 
-Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체150epoch, lr0=0.0005, patience=0으로 미세조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
+Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체 150epoch, lr0 =0.0005, patience =0으로 미세 조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험 셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
 
-추론 설정은 conf0.4·IoU0.45·640·최대50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비10회와 반복100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
+추론 설정은 conf0.4·IoU0.45·640·최대 50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비 10회와 반복 100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
 
-1. configs의 공통 8클래스·클래스별 YAML을 읽습니다.
+1. configs의 공통 8 클래스·클래스별 YAML을 읽습니다.
 2. models 아래 각 실험의 args.yaml과 results.csv를 같은 실행 단위로 대조합니다.
 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다.
 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다.
 
 ### LEVEL 1 · 결과와 주의할 범위
 
-클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트값으로 Phase 2 시작 모델을 선택하므로 같은 시험값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
+클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트 값으로 Phase 2 시작 모델을 선택하므로 같은 시험 값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
 
 **상황:** 다운로드 인증 실패
 
@@ -80,11 +80,11 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 ### LEVEL 2 · 목적과 구성의 연결
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
-Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세조정을 구성합니다.
+Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세 조정을 구성합니다.
 
 데이터 분할은 강제 테스트 배정 후 남은 영상 74% 학습·21% 검증·나머지 테스트입니다. 표제의 7:2:1과 실제 배정은 다릅니다.
 
@@ -102,30 +102,30 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 
 ### LEVEL 2 · 설정과 처리 순서의 관계
 
-1. configs의 공통 8클래스·클래스별 YAML을 읽습니다.
+1. configs의 공통 8 클래스·클래스별 YAML을 읽습니다.
 2. models 아래 각 실험의 args.yaml과 results.csv를 같은 실행 단위로 대조합니다.
 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다.
 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다.
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는 /root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
 #### LEVEL 2 · 분할·학습·평가를 읽는 순서
 
-원본별 train·valid·test 영상을 모은 뒤 공통 8클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
+원본별 train·valid·test 영상을 모은 뒤 공통 8 클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
 
 이름 매핑이 하나도 맞지 않으면 ID 정렬 순서 fallback이 있으므로 출력 매핑을 확인해야 합니다. 이 분할 코드에는 이미지 내용 중복 검출이 없습니다.
 
-볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의74%를 학습,21%를 검증,나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
+볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의 74%를 학습,21%를 검증, 나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
 
-Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체150epoch, lr0=0.0005, patience=0으로 미세조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
+Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체 150epoch, lr0 =0.0005, patience =0으로 미세 조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험 셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
 
-추론 설정은 conf0.4·IoU0.45·640·최대50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비10회와 반복100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
+추론 설정은 conf0.4·IoU0.45·640·최대 50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비 10회와 반복 100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
 
 ### LEVEL 2 · 관측과 해석을 구분하기
 
-클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트값으로 Phase 2 시작 모델을 선택하므로 같은 시험값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
+클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트 값으로 Phase 2 시작 모델을 선택하므로 같은 시험 값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
 
 **상황:** 다운로드 인증 실패
 
@@ -147,27 +147,27 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 ### LEVEL 3 · 이 차수를 준비하는 범위
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는 /root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
 #### LEVEL 3 · 분할·학습·평가를 읽는 순서
 
-원본별 train·valid·test 영상을 모은 뒤 공통 8클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
+원본별 train·valid·test 영상을 모은 뒤 공통 8 클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
 
 이름 매핑이 하나도 맞지 않으면 ID 정렬 순서 fallback이 있으므로 출력 매핑을 확인해야 합니다. 이 분할 코드에는 이미지 내용 중복 검출이 없습니다.
 
-볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의74%를 학습,21%를 검증,나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
+볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의 74%를 학습,21%를 검증, 나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
 
-Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체150epoch, lr0=0.0005, patience=0으로 미세조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
+Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체 150epoch, lr0 =0.0005, patience =0으로 미세 조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험 셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
 
-추론 설정은 conf0.4·IoU0.45·640·최대50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비10회와 반복100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
+추론 설정은 conf0.4·IoU0.45·640·최대 50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비 10회와 반복 100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
 
 ### LEVEL 3 · 실제 사용·실험 순서
 
-1. configs의 공통 8클래스·클래스별 YAML을 읽습니다.
+1. configs의 공통 8 클래스·클래스별 YAML을 읽습니다.
 2. models 아래 각 실험의 args.yaml과 results.csv를 같은 실행 단위로 대조합니다.
 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다.
 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다.
@@ -180,7 +180,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 ### LEVEL 3 · 결과와 실패를 확인하기
 
-클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트값으로 Phase 2 시작 모델을 선택하므로 같은 시험값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
+클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트 값으로 Phase 2 시작 모델을 선택하므로 같은 시험 값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
 
 **상황:** 다운로드 인증 실패
 
@@ -197,9 +197,9 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 ### LEVEL 3 · 실행 전 대조할 차수 조건
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
-Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세조정을 구성합니다.
+Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세 조정을 구성합니다.
 
 데이터 분할은 강제 테스트 배정 후 남은 영상 74% 학습·21% 검증·나머지 테스트입니다. 표제의 7:2:1과 실제 배정은 다릅니다.
 
@@ -212,11 +212,11 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 
 ### LEVEL 4 · 설계 의도와 검토 경계
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
-Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세조정을 구성합니다.
+Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세 조정을 구성합니다.
 
 데이터 분할은 강제 테스트 배정 후 남은 영상 74% 학습·21% 검증·나머지 테스트입니다. 표제의 7:2:1과 실제 배정은 다릅니다.
 
@@ -237,23 +237,23 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 
 ### LEVEL 4 · 조건·변경·결과를 함께 검토하기
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는 /root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
 #### LEVEL 4 · 분할·학습·평가를 읽는 순서
 
-원본별 train·valid·test 영상을 모은 뒤 공통 8클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
+원본별 train·valid·test 영상을 모은 뒤 공통 8 클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
 
 이름 매핑이 하나도 맞지 않으면 ID 정렬 순서 fallback이 있으므로 출력 매핑을 확인해야 합니다. 이 분할 코드에는 이미지 내용 중복 검출이 없습니다.
 
-볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의74%를 학습,21%를 검증,나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
+볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의 74%를 학습,21%를 검증, 나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
 
-Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체150epoch, lr0=0.0005, patience=0으로 미세조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
+Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체 150epoch, lr0 =0.0005, patience =0으로 미세 조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험 셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
 
-추론 설정은 conf0.4·IoU0.45·640·최대50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비10회와 반복100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
+추론 설정은 conf0.4·IoU0.45·640·최대 50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비 10회와 반복 100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
 
-클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트값으로 Phase 2 시작 모델을 선택하므로 같은 시험값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
+클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트 값으로 Phase 2 시작 모델을 선택하므로 같은 시험 값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
 
 **상황:** 다운로드 인증 실패
 
@@ -270,7 +270,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 ### LEVEL 4 · 재현과 전체 비교
 
-1. configs의 공통 8클래스·클래스별 YAML을 읽습니다.
+1. configs의 공통 8 클래스·클래스별 YAML을 읽습니다.
 2. models 아래 각 실험의 args.yaml과 results.csv를 같은 실행 단위로 대조합니다.
 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다.
 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다.
@@ -285,14 +285,12 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 <!-- reading-levels:end -->
 
 
-8클래스 통합 실험의 구성과 기록을 정리했습니다.
+8 클래스 통합 실험의 구성과 기록을 정리했습니다.
 
 
-
-**기술 분류:** Python · Jupyter · Ultralytics YOLOv8x · PyTorch · 8클래스 탐지
+**기술 분류:** Python·Jupyter·Ultralytics YOLOv8x·PyTorch·8 클래스 탐지
 
 [핵심 기능](#features) · [사용 흐름](#usage) · [자료 구성](#structure) · [준비와 실행](#setup) · [결과 읽기](#results) · [직전 변경](#changes)
-
 
 
 [프로젝트](../../README.md) · [전체 차수](../REVISION_INDEX.md) · [원본 자료](../../pbl2-main) · [← 이전: 기본 노트북](../materials/001-step-1/README.md)
@@ -300,7 +298,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 <a name="-목적과-이-차수의-역할"></a>
 ## 목적과 이 차수의 역할
 
-bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
 <a name="features"></a>
 
@@ -309,11 +307,11 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 
 **항목:** 1
 
-**이 차수에서 확인할 내용:** bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8클래스로 통합합니다.
+**이 차수에서 확인할 내용:** bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
 **항목:** 2
 
-**이 차수에서 확인할 내용:** Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세조정을 구성합니다.
+**이 차수에서 확인할 내용:** Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세 조정을 구성합니다.
 
 **항목:** 3
 
@@ -338,7 +336,7 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 <a name="️-화면과-사용-흐름"></a>
 ## 화면과 사용 흐름
 
-1. configs의 공통 8클래스·클래스별 YAML을 읽습니다.
+1. configs의 공통 8 클래스·클래스별 YAML을 읽습니다.
 2. models 아래 각 실험의 args.yaml과 results.csv를 같은 실행 단위로 대조합니다.
 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다.
 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다.
@@ -369,28 +367,28 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 <a name="-설치-환경과-실행사용법"></a>
 ## 설치 환경과 실행·사용법
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는 /root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
 ### 분할·학습·평가를 읽는 순서
 
-원본별 train·valid·test 영상을 모은 뒤 공통 8클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
+원본별 train·valid·test 영상을 모은 뒤 공통 8 클래스로 라벨을 다시 매핑합니다. YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다.
 
 이름 매핑이 하나도 맞지 않으면 ID 정렬 순서 fallback이 있으므로 출력 매핑을 확인해야 합니다. 이 분할 코드에는 이미지 내용 중복 검출이 없습니다.
 
-볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의74%를 학습,21%를 검증,나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
+볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. 남은 영상의 74%를 학습,21%를 검증, 나머지를 테스트로 보냅니다. 따라서 셀 제목의7:2:1이 실제 전체 비율은 아닙니다.
 
-Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체150epoch, lr0=0.0005, patience=0으로 미세조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
+Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Phase2는 선택한 모델에서 전체 150epoch, lr0 =0.0005, patience =0으로 미세 조정합니다. 테스트 결과로 시작 모델을 선택하므로 같은 시험 셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다.
 
-추론 설정은 conf0.4·IoU0.45·640·최대50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비10회와 반복100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
+추론 설정은 conf0.4·IoU0.45·640·최대 50개 탐지입니다. 속도 측정은 무작위 이미지 한 장에 준비 10회와 반복 100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다.
 
 <a name="results"></a>
 
 <a name="-처리-결과와-출력-읽기"></a>
 ## 처리 결과와 출력 읽기
 
-클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트값으로 Phase 2 시작 모델을 선택하므로 같은 시험값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
+클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. 테스트 값으로 Phase 2 시작 모델을 선택하므로 같은 시험 값은 모델 선택과 완전히 독립된 평가가 아닙니다. 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다.
 
 <a name="️-제약과-문제-해결"></a>
 ## 제약과 문제 해결
