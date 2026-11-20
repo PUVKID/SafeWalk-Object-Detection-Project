@@ -92,18 +92,11 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 
 ### LEVEL 2 · 입력에서 출력으로
 
-**단계:** 입력
-
-**내용:** Roboflow·COCO 계열 영상·라벨과 클래스 매핑
-
-**단계:** 처리
-
-**내용:** 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가
-
-**단계:** 출력
-
-**내용:** 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력
-
+| 단계 | 내용 |
+| --- | --- |
+| 입력 | Roboflow·COCO 계열 영상·라벨과 클래스 매핑 |
+| 처리 | 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가 |
+| 출력 | 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력 |
 
 입력·처리·출력은 위의 같은 자료 흐름을 다른 단계에서 읽는 기준입니다. 처리 조건과 출력의 의미를 함께 확인합니다.
 
@@ -179,18 +172,11 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다.
 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다.
 
-**단계:** 입력
-
-**내용:** Roboflow·COCO 계열 영상·라벨과 클래스 매핑
-
-**단계:** 처리
-
-**내용:** 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가
-
-**단계:** 출력
-
-**내용:** 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력
-
+| 단계 | 내용 |
+| --- | --- |
+| 입력 | Roboflow·COCO 계열 영상·라벨과 클래스 매핑 |
+| 처리 | 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가 |
+| 출력 | 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력 |
 
 ### LEVEL 3 · 결과와 실패를 확인하기
 
@@ -238,23 +224,16 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 
 ### LEVEL 4 · 이 차수 구현의 실제 근거
 
-| 내용 |
-| --- |
-| **파일:** [safewalk_train_v8_fixed (1).ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29.ipynb)<br>**원문에 정의된 역할·구성:** 노트북 23개 셀 |
-| **파일:** [safewalk_train_v8_fixed (1)_이전도커버전.ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29_%EC%9D%B4%EC%A0%84%EB%8F%84%EC%BB%A4%EB%B2%84%EC%A0%84.ipynb)<br>**원문에 정의된 역할·구성:** 노트북 23개 셀 |
+| 파일 | 원문에 정의된 역할·구성 |
+| --- | --- |
+| [safewalk_train_v8_fixed (1).ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29.ipynb) | 노트북 23개 셀 |
+| [safewalk_train_v8_fixed (1)_이전도커버전.ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29_%EC%9D%B4%EC%A0%84%EB%8F%84%EC%BB%A4%EB%B2%84%EC%A0%84.ipynb) | 노트북 23개 셀 |
 
-**단계:** 입력
-
-**내용:** Roboflow·COCO 계열 영상·라벨과 클래스 매핑
-
-**단계:** 처리
-
-**내용:** 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가
-
-**단계:** 출력
-
-**내용:** 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력
-
+| 단계 | 내용 |
+| --- | --- |
+| 입력 | Roboflow·COCO 계열 영상·라벨과 클래스 매핑 |
+| 처리 | 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가 |
+| 출력 | 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력 |
 
 ### LEVEL 4 · 조건·변경·결과를 함께 검토하기
 
@@ -348,18 +327,11 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 <a name="-입력처리출력"></a>
 ## 입력·처리·출력
 
-**단계:** 입력
-
-**내용:** Roboflow·COCO 계열 영상·라벨과 클래스 매핑
-
-**단계:** 처리
-
-**내용:** 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가
-
-**단계:** 출력
-
-**내용:** 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력
-
+| 단계 | 내용 |
+| --- | --- |
+| 입력 | Roboflow·COCO 계열 영상·라벨과 클래스 매핑 |
+| 처리 | 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가 |
+| 출력 | 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력 |
 
 <a name="usage"></a>
 
@@ -376,21 +348,21 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 <a name="-실제-자료-구성"></a>
 ## 실제 자료 구성
 
-| 내용 |
-| --- |
-| **경로:** [configs/](../../pbl2-main/configs)<br>**자료 종류:** 하위 자료 폴더 |
-| **경로:** [models/](../../pbl2-main/models)<br>**자료 종류:** 하위 자료 폴더 |
-| **경로:** [README.md](../../pbl2-main/README.md)<br>**자료 종류:** MD 파일 |
-| **경로:** [safewalk_train_v8_fixed (1).ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29.ipynb)<br>**자료 종류:** IPYNB 파일 |
-| **경로:** [safewalk_train_v8_fixed (1)_이전도커버전.ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29_%EC%9D%B4%EC%A0%84%EB%8F%84%EC%BB%A4%EB%B2%84%EC%A0%84.ipynb)<br>**자료 종류:** IPYNB 파일 |
+| 경로 | 자료 종류 |
+| --- | --- |
+| [configs/](../../pbl2-main/configs) | 하위 자료 폴더 |
+| [models/](../../pbl2-main/models) | 하위 자료 폴더 |
+| [README.md](../../pbl2-main/README.md) | MD 파일 |
+| [safewalk_train_v8_fixed (1).ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29.ipynb) | IPYNB 파일 |
+| [safewalk_train_v8_fixed (1)_이전도커버전.ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29_%EC%9D%B4%EC%A0%84%EB%8F%84%EC%BB%A4%EB%B2%84%EC%A0%84.ipynb) | IPYNB 파일 |
 
 <a name="-주요-모듈과-코드-읽기"></a>
 ## 주요 모듈과 코드 읽기
 
-| 내용 |
-| --- |
-| **파일:** [safewalk_train_v8_fixed (1).ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29.ipynb)<br>**원문에 정의된 역할·구성:** 노트북 23개 셀 |
-| **파일:** [safewalk_train_v8_fixed (1)_이전도커버전.ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29_%EC%9D%B4%EC%A0%84%EB%8F%84%EC%BB%A4%EB%B2%84%EC%A0%84.ipynb)<br>**원문에 정의된 역할·구성:** 노트북 23개 셀 |
+| 파일 | 원문에 정의된 역할·구성 |
+| --- | --- |
+| [safewalk_train_v8_fixed (1).ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29.ipynb) | 노트북 23개 셀 |
+| [safewalk_train_v8_fixed (1)_이전도커버전.ipynb](../../pbl2-main/safewalk_train_v8_fixed%20%281%29_%EC%9D%B4%EC%A0%84%EB%8F%84%EC%BB%A4%EB%B2%84%EC%A0%84.ipynb) | 노트북 23개 셀 |
 
 <a name="setup"></a>
 
@@ -452,118 +424,36 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별15~40epoch를 구성합니다. Phas
 
 [전체 텍스트 차이](step-2.patch) · [파일별 크기·SHA-256](step-2-files.json)
 
-**구분:** 추가
-
-**파일:** `configs/dataset_8class.yaml`
-
-**구분:** 추가
-
-**파일:** `configs/dataset_bicycle.yaml`
-
-**구분:** 추가
-
-**파일:** `configs/dataset_bollard.yaml`
-
-**구분:** 추가
-
-**파일:** `configs/dataset_car.yaml`
-
-**구분:** 추가
-
-**파일:** `configs/dataset_crosswalk.yaml`
-
-**구분:** 추가
-
-**파일:** `configs/dataset_kickboard.yaml`
-
-**구분:** 추가
-
-**파일:** `configs/dataset_motorcycle.yaml`
-
-**구분:** 추가
-
-**파일:** `configs/dataset_people.yaml`
-
-**구분:** 추가
-
-**파일:** `configs/dataset_stairs.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/bicycle/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/bicycle/results.csv`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/bollard/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/bollard/results.csv`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/car/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/car/results.csv`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/crosswalk/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/crosswalk/results.csv`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/kickboard/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/kickboard/results.csv`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/motorcycle/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/motorcycle/results.csv`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/people/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/people/results.csv`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/stairs/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/phase1_per_class/stairs/results.csv`
-
-**구분:** 추가
-
-**파일:** `models/safewalk_v8/args.yaml`
-
-**구분:** 추가
-
-**파일:** `models/safewalk_v8/results.csv`
-
-**구분:** 추가
-
-**파일:** `safewalk_train_v8_fixed (1)_이전도커버전.ipynb`
-
+| 구분 | 파일 |
+| --- | --- |
+| 추가 | `configs/dataset_8class.yaml` |
+| 추가 | `configs/dataset_bicycle.yaml` |
+| 추가 | `configs/dataset_bollard.yaml` |
+| 추가 | `configs/dataset_car.yaml` |
+| 추가 | `configs/dataset_crosswalk.yaml` |
+| 추가 | `configs/dataset_kickboard.yaml` |
+| 추가 | `configs/dataset_motorcycle.yaml` |
+| 추가 | `configs/dataset_people.yaml` |
+| 추가 | `configs/dataset_stairs.yaml` |
+| 추가 | `models/phase1_per_class/bicycle/args.yaml` |
+| 추가 | `models/phase1_per_class/bicycle/results.csv` |
+| 추가 | `models/phase1_per_class/bollard/args.yaml` |
+| 추가 | `models/phase1_per_class/bollard/results.csv` |
+| 추가 | `models/phase1_per_class/car/args.yaml` |
+| 추가 | `models/phase1_per_class/car/results.csv` |
+| 추가 | `models/phase1_per_class/crosswalk/args.yaml` |
+| 추가 | `models/phase1_per_class/crosswalk/results.csv` |
+| 추가 | `models/phase1_per_class/kickboard/args.yaml` |
+| 추가 | `models/phase1_per_class/kickboard/results.csv` |
+| 추가 | `models/phase1_per_class/motorcycle/args.yaml` |
+| 추가 | `models/phase1_per_class/motorcycle/results.csv` |
+| 추가 | `models/phase1_per_class/people/args.yaml` |
+| 추가 | `models/phase1_per_class/people/results.csv` |
+| 추가 | `models/phase1_per_class/stairs/args.yaml` |
+| 추가 | `models/phase1_per_class/stairs/results.csv` |
+| 추가 | `models/safewalk_v8/args.yaml` |
+| 추가 | `models/safewalk_v8/results.csv` |
+| 추가 | `safewalk_train_v8_fixed (1)_이전도커버전.ipynb` |
 
 </details>
 
