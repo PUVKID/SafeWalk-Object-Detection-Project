@@ -35,7 +35,7 @@ CSV는 값을 쉼표로 나눈 표 파일입니다. epoch는 학습 자료를 �
 
 ### LEVEL 1 · 준비하고 확인할 것
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
@@ -107,7 +107,7 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다.
 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다.
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
@@ -149,7 +149,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Pha
 
 bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다.
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
@@ -237,7 +237,7 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 
 ### LEVEL 4 · 조건·변경·결과를 함께 검토하기
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
@@ -367,7 +367,7 @@ bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공�
 <a name="-설치-환경과-실행사용법"></a>
 ## 설치 환경과 실행·사용법
 
-Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터 셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
+Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. 원래 PROJECT_ROOT는/root/pbl2-main이며 전용 실험 폴더로 바꿉니다. COCO 분기는 fiftyone이 별도로 필요합니다.
 
 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다.
 
