@@ -9,7 +9,7 @@
 프로젝트 전체의 설명은 [LEVEL 1 - Beginner](../%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md)부터 [LEVEL 5 - Expert](../%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md)까지 같은 범위로 연결됩니다.
 
 <details open>
-<summary><strong>LEVEL 1 · Beginner</strong> — 목적과 동작부터</summary>
+<summary>LEVEL 1 · Beginner — 목적과 동작부터</summary>
 
 <a id="reading-level-1"></a>
 ## LEVEL 1 - Beginner
@@ -18,67 +18,67 @@
 
 | 구분 | 동작·조건과 확인 범위 |
 | --- | --- |
-| **공통 탐지 클래스** | bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다. |
+| 공통 탐지 클래스 | bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다. |
 
 
 ### LEVEL 1 · 실제 동작을 따라 읽기
 
 | 구분 | 동작·조건과 확인 범위 |
 | --- | --- |
-| **공통 탐지 클래스** | bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다. |
-| **클래스별·통합 학습** | Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세 조정을 구성합니다. |
-| **실제 자료 분할** | 데이터 분할은 강제 테스트 배정 후 남은 영상 74% 학습·21% 검증·나머지 테스트입니다. |
-| **표제·실제 분할 차이** | 표제의 7:2:1과 실제 배정은 다릅니다. |
-| **추론·내보내기 준비** | 추론·영상 데모·내보내기 경로는 학습과 별도이며 실제 장치 환경과 가중치가 필요합니다. |
-| **CSV의 뜻** | CSV는 값을 쉼표로 나눈 표 파일입니다. |
-| **epoch의 뜻** | epoch는 학습 자료를 한 차례 순회하는 단위입니다. |
-| **bbox의 뜻** | bbox는 물체를 둘러싼 사각형 위치와 크기를 나타내는 표기입니다. |
-| **입력 자료·매핑** | 입력 — Roboflow·COCO 계열 영상·라벨과 클래스 매핑 |
-| **자료·학습 처리 흐름** | 처리 — 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가 |
-| **설정·지표·모델 출력** | 출력 — 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력 |
+| 공통 탐지 클래스 | bicycle·kickboard·bollard·car·motorcycle·stairs·crosswalk·people을 공통 8 클래스로 통합합니다. |
+| 클래스별·통합 학습 | Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 150 epoch 미세 조정을 구성합니다. |
+| 실제 자료 분할 | 데이터 분할은 강제 테스트 배정 후 남은 영상 74% 학습·21% 검증·나머지 테스트입니다. |
+| 표제·실제 분할 차이 | 표제의 7:2:1과 실제 배정은 다릅니다. |
+| 추론·내보내기 준비 | 추론·영상 데모·내보내기 경로는 학습과 별도이며 실제 장치 환경과 가중치가 필요합니다. |
+| CSV의 뜻 | CSV는 값을 쉼표로 나눈 표 파일입니다. |
+| epoch의 뜻 | epoch는 학습 자료를 한 차례 순회하는 단위입니다. |
+| bbox의 뜻 | bbox는 물체를 둘러싼 사각형 위치와 크기를 나타내는 표기입니다. |
+| 입력 자료·매핑 | 입력 — Roboflow·COCO 계열 영상·라벨과 클래스 매핑 |
+| 자료·학습 처리 흐름 | 처리 — 클래스 통합 → 데이터 분할 → 클래스별 학습 → 통합 미세조정 → 평가 |
+| 설정·지표·모델 출력 | 출력 — 학습 설정 YAML·에폭별 CSV·평가/추론·모델 출력 |
 
 
 ### LEVEL 1 · 준비하고 확인할 것
 
 | 구분 | 동작·조건과 확인 범위 |
 | --- | --- |
-| **패키지·GPU·접근 준비** | Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. |
-| **전용 실험 경로** | 원래 PROJECT_ROOT는 /root/pbl2-main이며 전용 실험 폴더로 바꿉니다. |
-| **COCO 추가 의존성** | COCO 분기는 fiftyone이 별도로 필요합니다. |
-| **노트북·셀 열람 순서** | 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. |
-| **재생성 경로·원본 보존** | 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다. |
+| 패키지·GPU·접근 준비 | Jupyter와 노트북 설치 셀의 패키지, GPU·CUDA 환경, 본인의 ROBOFLOW_API_KEY와 데이터셋 접근 권한을 준비합니다. |
+| 전용 실험 경로 | 원래 PROJECT_ROOT는 /root/pbl2-main이며 전용 실험 폴더로 바꿉니다. |
+| COCO 추가 의존성 | COCO 분기는 fiftyone이 별도로 필요합니다. |
+| 노트북·셀 열람 순서 | 최상위 safewalk_train_v8_fixed (1).ipynb 또는 이 묶음의 해당 노트북을 Jupyter에서 열고 설정·데이터 매핑·GPU 확인 셀부터 순서대로 읽습니다. |
+| 재생성 경로·원본 보존 | 병합·분할 셀은 merged·processed·per_class 결과를 재생성하므로 이전 결과와 분리합니다. |
 
 
 #### LEVEL 1 · 분할·학습·평가를 읽는 순서
 
 | 구분 | 동작·조건과 확인 범위 |
 | --- | --- |
-| **원본 분할 병합·재매핑** | 원본별 train·valid·test 영상을 모은 뒤 공통 8 클래스로 라벨을 다시 매핑합니다. |
-| **상자 라벨·세그멘테이션** | YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다. |
-| **이름 불일치 fallback** | 이름 매핑이 하나도 맞지 않으면 ID 정렬 순서 fallback이 있으므로 출력 매핑을 확인해야 합니다. |
-| **내용 중복 검출 부재** | 이 분할 코드에는 이미지 내용 중복 검출이 없습니다. |
-| **클래스별 시험 우선 배정** | 볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. |
-| **잔여 자료 분할** | 남은 영상의 74%를 학습, 21%를 검증, 나머지를 테스트로 보냅니다. |
-| **분할 제목·실제 비율** | 따라서 셀 제목의 7:2:1이 실제 전체 비율은 아닙니다. |
-| **클래스별 학습 설정** | Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. |
-| **통합 미세조정 설정** | Phase2는 선택한 모델에서 전체 150epoch, lr0 =0.0005, patience =0으로 미세 조정합니다. |
-| **시험 기반 모델 선택** | 테스트 결과로 시작 모델을 선택하므로 같은 시험 셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다. |
-| **추론 설정** | 추론 설정은 conf0.4·IoU0.45·640·최대 50개 탐지입니다. |
-| **장치 속도·보행 성능** | 속도 측정은 무작위 이미지 한 장에 준비 10회와 반복 100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. |
-| **주의 문구의 의미** | `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다. |
-| **클래스별 설정 확인** | 1. configs의 공통 8 클래스·클래스별 YAML을 읽습니다. |
-| **실행별 YAML·CSV 대조** | 2. models 아래 각 실험의 args.yaml과 results.csv를 같은 실행 단위로 대조합니다. |
-| **현재·이전 노트북 구분** | 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다. |
-| **기존·신규 지표 분리** | 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다. |
+| 원본 분할 병합·재매핑 | 원본별 train·valid·test 영상을 모은 뒤 공통 8 클래스로 라벨을 다시 매핑합니다. |
+| 상자 라벨·세그멘테이션 | YOLO bbox의 5개 항목만 병합하고 세그멘테이션 라인은 제외합니다. |
+| 이름 불일치 fallback | 이름 매핑이 하나도 맞지 않으면 ID 정렬 순서 fallback이 있으므로 출력 매핑을 확인해야 합니다. |
+| 내용 중복 검출 부재 | 이 분할 코드에는 이미지 내용 중복 검출이 없습니다. |
+| 클래스별 시험 우선 배정 | 볼라드·횡단보도는 각각 `min(100, 이미지 수의15%)`를 테스트로 우선 확보합니다. |
+| 잔여 자료 분할 | 남은 영상의 74%를 학습, 21%를 검증, 나머지를 테스트로 보냅니다. |
+| 분할 제목·실제 비율 | 따라서 셀 제목의 7:2:1이 실제 전체 비율은 아닙니다. |
+| 클래스별 학습 설정 | Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. |
+| 통합 미세조정 설정 | Phase2는 선택한 모델에서 전체 150epoch, lr0 =0.0005, patience =0으로 미세 조정합니다. |
+| 시험 기반 모델 선택 | 테스트 결과로 시작 모델을 선택하므로 같은 시험 셋 최종 수치는 모델 선택과 독립된 평가가 아닙니다. |
+| 추론 설정 | 추론 설정은 conf0.4·IoU0.45·640·최대 50개 탐지입니다. |
+| 장치 속도·보행 성능 | 속도 측정은 무작위 이미지 한 장에 준비 10회와 반복 100회를 적용한 장치별 측정이며 실시간 보행 안전 성능과 다릅니다. |
+| 주의 문구의 의미 | `SafeWalkDetector`의 주의 문구는 객체 종류에 따른 표시이고 거리·충돌 예측값은 아닙니다. |
+| 클래스별 설정 확인 | 1. configs의 공통 8 클래스·클래스별 YAML을 읽습니다. |
+| 실행별 YAML·CSV 대조 | 2. models 아래 각 실험의 args.yaml과 results.csv를 같은 실행 단위로 대조합니다. |
+| 현재·이전 노트북 구분 | 3. 현재 노트북과 이전 도커 버전 노트북을 구분해 셀·설정 차이를 읽습니다. |
+| 기존·신규 지표 분리 | 4. 저장된 에폭 지표를 확인하고 새로운 학습 출력과 섞지 않습니다. |
 
 
 ### LEVEL 1 · 결과와 주의할 범위
 
 | 구분 | 동작·조건과 확인 범위 |
 | --- | --- |
-| **동일 실행 설정·지표** | 클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. |
-| **시험·모델 선택 독립성** | 테스트 값으로 Phase 2 시작 모델을 선택하므로 같은 시험 값은 모델 선택과 완전히 독립된 평가가 아닙니다. |
-| **위험 문구의 한계** | 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다. |
+| 동일 실행 설정·지표 | 클래스별 results.csv의 epoch·precision·recall·mAP50·mAP50-95를 args.yaml과 함께 읽습니다. |
+| 시험·모델 선택 독립성 | 테스트 값으로 Phase 2 시작 모델을 선택하므로 같은 시험 값은 모델 선택과 완전히 독립된 평가가 아닙니다. |
+| 위험 문구의 한계 | 위험 문구는 객체 종류 기반 표시이며 거리·충돌 예측 결과가 아닙니다. |
 
 
 | 상황 | 확인할 내용 |
@@ -95,7 +95,7 @@
 </details>
 
 <details>
-<summary><strong>LEVEL 2 · Explorer</strong> — 구성과 연결 원리</summary>
+<summary>LEVEL 2 · Explorer — 구성과 연결 원리</summary>
 
 <a id="reading-level-2"></a>
 ## LEVEL 2 - Explorer
@@ -168,7 +168,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Pha
 </details>
 
 <details>
-<summary><strong>LEVEL 3 · Practitioner</strong> — 준비·실행·결과 확인</summary>
+<summary>LEVEL 3 · Practitioner — 준비·실행·결과 확인</summary>
 
 <a id="reading-level-3"></a>
 ## LEVEL 3 - Practitioner
@@ -239,7 +239,7 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 </details>
 
 <details>
-<summary><strong>LEVEL 4 · Advanced</strong> — 구현·설계·실패 처리</summary>
+<summary>LEVEL 4 · Advanced — 구현·설계·실패 처리</summary>
 
 <a id="reading-level-4"></a>
 ## LEVEL 4 - Advanced
@@ -316,7 +316,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Pha
 </details>
 
 <details>
-<summary><strong>LEVEL 5 · Expert</strong> — 근거·프로토콜·한계 검토</summary>
+<summary>LEVEL 5 · Expert — 근거·프로토콜·한계 검토</summary>
 
 <a id="reading-level-5"></a>
 ## LEVEL 5 - Expert
