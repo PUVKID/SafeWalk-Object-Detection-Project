@@ -4,7 +4,7 @@
 # 실험 구성과 기록
 
 <!-- reading-levels:start -->
-[LEVEL 1 - Beginner](#reading-level-1) · [LEVEL 2 - Explorer](#reading-level-2) · [LEVEL 3 - Practitioner](#reading-level-3) · [LEVEL 4 - Advanced](#reading-level-4) · [LEVEL 5 - Expert](#reading-level-5)
+[LEVEL 1 - Beginner](#user-content-reading-level-1) · [LEVEL 2 - Explorer](#user-content-reading-level-2) · [LEVEL 3 - Practitioner](#user-content-reading-level-3) · [LEVEL 4 - Advanced](#user-content-reading-level-4) · [LEVEL 5 - Expert](#user-content-reading-level-5)
 
 프로젝트 전체의 설명은 [LEVEL 1 - Beginner](../%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md)부터 [LEVEL 5 - Expert](../%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md)까지 같은 범위로 연결됩니다.
 
@@ -89,7 +89,7 @@
 
 
 
-[자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#reading-level-5)
+[자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -162,7 +162,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Pha
 **확인할 내용:** 설치 셀의 headless OpenCV와 GUI 표시용 환경 차이를 확인합니다.
 
 
-[자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#reading-level-5)
+[자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -233,7 +233,7 @@ Phase 1은 클래스별 15~40 epoch, Phase 2는 선택한 모델에서 전체 15
 
 추론·영상 데모·내보내기 경로는 학습과 별도이며 실제 장치 환경과 가중치가 필요합니다.
 
-[자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#reading-level-5)
+[자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -311,7 +311,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Pha
 
 위 구성요소의 입력·출력과 실패 조건을 같은 차수 소스에 연결해 검토합니다. 전체 비교는 추가·수정·삭제와 원래 보관 범위를 구분하는 근거입니다.
 
-[자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#reading-level-5)
+[자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#user-content-reading-level-5)
 
 </details>
 
@@ -321,7 +321,7 @@ Phase1은 YOLOv8x·640·AdamW로 클래스별 15~40epoch를 구성합니다. Pha
 <a id="reading-level-5"></a>
 ## LEVEL 5 - Expert
 
-기존의 전체 설명·표·코드·함수 참조·파일별 비교는 아래에 그대로 이어집니다. [자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#reading-level-5)
+기존의 전체 설명·표·코드·함수 참조·파일별 비교는 아래에 그대로 이어집니다. [자료 폴더](../../pbl2-main) · [직전 비교·자료 범위](step-2.patch) · [이 차수의 원래 전체 상세](#user-content-reading-level-5)
 <!-- reading-levels:end -->
 
 
