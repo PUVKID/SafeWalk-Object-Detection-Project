@@ -21,7 +21,7 @@
   <source media="(max-width: 600px)" srcset="assets/readme/flow-ko-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/flow-ko-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/readme/flow-ko-light.svg" />
-  <img src="assets/readme/flow-ko-light.svg" alt="SafeWalk Project: 영상 · 객체 라벨 → 8클래스 통합 · YOLO → 객체 탐지 · 평가" width="100%" />
+  <img src="assets/readme/flow-ko-light.svg" alt="영상 · 객체 라벨: Roboflow·COCO 영상과 라벨 → 8클래스 통합 · YOLO: 클래스별 학습 뒤 통합 미세조정 → 객체 탐지 · 평가: 8개 클래스 탐지와 영상 데모" width="100%" />
 </picture>
 <!-- readme-header32:end -->
 

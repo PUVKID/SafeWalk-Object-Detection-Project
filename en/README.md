@@ -22,7 +22,7 @@
   <source media="(max-width: 600px)" srcset="../assets/readme/flow-en-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="../assets/readme/flow-en-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="../assets/readme/flow-en-light.svg" />
-  <img src="../assets/readme/flow-en-light.svg" alt="SafeWalk Project: Images · object labels → 8-class mapping · YOLO → Object detection · evaluation" width="100%" />
+  <img src="../assets/readme/flow-en-light.svg" alt="Images · object labels: Roboflow and COCO images and labels → 8-class mapping · YOLO: Per-class training then fine-tuning → Object detection · evaluation: Eight-class detections and video demos" width="100%" />
 </picture>
 <!-- readme-header32:end -->
 
