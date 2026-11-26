@@ -1,6 +1,30 @@
 
 <a name="-safewalk-project"></a>
-# SafeWalk Project
+<!-- readme-header32:start -->
+<a name="safewalk-project"></a>
+<p align="center"><img src="assets/readme/icon.svg" alt="" width="72" height="72" /></p>
+<h1 align="center" id="project-title">SafeWalk Project</h1>
+<p align="center">보행 관련 객체의 탐지와 평가</p>
+<p align="center">
+  <a href="README.md"><img src="assets/readme/language-ko-active.svg" alt="한국어 · 현재 언어" width="126" height="32" /></a>
+  <a href="en/README.md"><img src="assets/readme/language-en-link.svg" alt="English" width="126" height="32" /></a>
+</p>
+<p align="center">
+  <a href="docs/읽기안내/레벨1.md"><img src="assets/readme/level-1.svg" alt="LEVEL 1 - Beginner" width="92" height="32" /></a>
+  <a href="docs/읽기안내/레벨2.md"><img src="assets/readme/level-2.svg" alt="LEVEL 2 - Explorer" width="92" height="32" /></a>
+  <a href="docs/읽기안내/레벨3.md"><img src="assets/readme/level-3.svg" alt="LEVEL 3 - Practitioner" width="92" height="32" /></a>
+  <a href="docs/읽기안내/레벨4.md"><img src="assets/readme/level-4.svg" alt="LEVEL 4 - Advanced" width="92" height="32" /></a>
+  <a href="docs/읽기안내/레벨5.md"><img src="assets/readme/level-5.svg" alt="LEVEL 5 - Expert" width="92" height="32" /></a>
+</p>
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/readme/flow-ko-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/readme/flow-ko-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/flow-ko-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/flow-ko-light.svg" />
+  <img src="assets/readme/flow-ko-light.svg" alt="SafeWalk Project: 영상 · 객체 라벨 → 8클래스 통합 · YOLO → 객체 탐지 · 평가" width="100%" />
+</picture>
+<!-- readme-header32:end -->
+
 
 여러 데이터셋을 통합해 보행 환경의 8개 클래스를 탐지합니다.
 
